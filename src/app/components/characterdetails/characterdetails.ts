@@ -27,10 +27,10 @@ export class Characterdetails implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
 
     if (id) {
-      // fetch selected character details
+      // api returns an array, so take the first item
       this.hpService.getCharacterById(id).subscribe({
         next: (data) => {
-          this.character = data;
+          this.character = data[0];
         },
         error: (err) => console.error('Error fetching character details:', err)
       });

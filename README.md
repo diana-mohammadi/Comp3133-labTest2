@@ -6,6 +6,8 @@
 - Course: COMP3133  
 
 ---
+## Hosted Link
+https://comp3133-lab-test2.vercel.app
 
 ## Project Description
 
@@ -72,6 +74,4 @@ The project uses Angular standalone components and Angular Material for UI desig
 - Character details:
   https://hp-api.onrender.com/api/character/{id}
 
----
 
-## Project Structure

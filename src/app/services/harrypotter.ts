@@ -23,7 +23,7 @@ export class HarrypotterService {
   }
 
   // get one character details by id
-  getCharacterById(id: string): Observable<Character> {
-    return this.http.get<Character>(`${this.baseUrl}/character/${id}`);
+  getCharacterById(id: string): Observable<Character[]> {
+  return this.http.get<Character[]>(`${this.baseUrl}/character/${id}`);
   }
 }
