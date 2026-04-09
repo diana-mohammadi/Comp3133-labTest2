@@ -1,59 +1,77 @@
-# 101481507LabTest2Comp3133
+# Harry Potter Character App (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+## Student Information
+- Name: Diana Mohammadi  
+- Student ID: 101481507  
+- Course: COMP3133  
 
-## Development server
+---
 
-To start a local development server, run:
+## Project Description
 
-```bash
-ng serve
-```
+This is an Angular application that displays Harry Potter characters using a public API.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The application allows users to:
+- View a list of all characters
+- Filter characters by house
+- View detailed information about each character
 
-## Code scaffolding
+The project uses Angular standalone components and Angular Material for UI design.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## Features
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Character List
+- Displays all Harry Potter characters
+- Shows:
+  - Name
+  - House
+  - Image
 
-```bash
-ng generate --help
-```
+### 2. Filter by House
+- Dropdown menu to filter characters
+- Houses included:
+  - Gryffindor
+  - Slytherin
+  - Hufflepuff
+  - Ravenclaw
 
-## Building
+### 3. Character Details
+- Clicking a character opens a details page
+- Displays:
+  - Name
+  - Species
+  - House
+  - Wizard
+  - Ancestry
+  - Actor
+  - Wand (wood, core, length)
+  - Image
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Technologies Used
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Angular
+- Angular Material
+- TypeScript
+- HTML / CSS
+- Harry Potter API
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## API Endpoints Used
 
-```bash
-ng test
-```
+- All characters:
+  https://hp-api.onrender.com/api/characters
 
-## Running end-to-end tests
+- Characters by house:
+  https://hp-api.onrender.com/api/characters/house/{house}
 
-For end-to-end (e2e) testing, run:
+- Character details:
+  https://hp-api.onrender.com/api/character/{id}
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project Structure
