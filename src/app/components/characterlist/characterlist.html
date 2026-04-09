@@ -1,0 +1,24 @@
+<h1>Harry Potter Characters</h1>
+
+<app-characterfilter (houseSelected)="onHouseSelected($event)"></app-characterfilter>
+
+<div class="card-container">
+  <mat-card *ngFor="let character of filteredCharacters" class="character-card">
+    <img
+      mat-card-image
+      [src]="character.image || 'https://via.placeholder.com/250x300?text=No+Image'"
+      [alt]="character.name"
+    />
+
+    <mat-card-content>
+      <h2>{{ character.name }}</h2>
+      <p><strong>House:</strong> {{ character.house || 'No House' }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/character', character.id]">
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

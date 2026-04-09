@@ -1,0 +1,11 @@
+<div class="filter-box">
+  <mat-form-field appearance="fill">
+    <mat-label>Select House</mat-label>
+    <mat-select [(ngModel)]="selectedHouse" (selectionChange)="onSelectionChange()">
+      <mat-option value="">All Characters</mat-option>
+      <mat-option *ngFor="let house of houses" [value]="house">
+        {{ house }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
