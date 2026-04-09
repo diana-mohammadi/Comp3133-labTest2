@@ -1,4 +1,4 @@
-<div *ngIf="character" class="details-container">
+<div class="details-container" *ngIf="character; else noData">
   <mat-card>
     <img
       mat-card-image
@@ -9,17 +9,18 @@
     <mat-card-content>
       <h2>{{ character.name }}</h2>
       <p><strong>Species:</strong> {{ character.species }}</p>
-      <p><strong>House:</strong> {{ character.house || 'No House' }}</p>
-      <p><strong>Wizard:</strong> {{ character.wizard ? 'Yes' : 'No' }}</p>
-      <p><strong>Ancestry:</strong> {{ character.ancestry || 'Unknown' }}</p>
-      <p><strong>Actor:</strong> {{ character.actor || 'Unknown' }}</p>
-      <p><strong>Wand Wood:</strong> {{ character.wand?.wood || 'Unknown' }}</p>
-      <p><strong>Wand Core:</strong> {{ character.wand?.core || 'Unknown' }}</p>
-      <p><strong>Wand Length:</strong> {{ character.wand?.length || 'Unknown' }}</p>
+      <p><strong>House:</strong> {{ character.house }}</p>
+      <p><strong>Wizard:</strong> {{ character.wizard }}</p>
+      <p><strong>Ancestry:</strong> {{ character.ancestry }}</p>
+      <p><strong>Actor:</strong> {{ character.actor }}</p>
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="accent" routerLink="/">Back</button>
+      <button mat-raised-button color="primary" routerLink="/">Back</button>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<ng-template #noData>
+  <p style="text-align: center; margin-top: 30px;">No character data found.</p>
+</ng-template>

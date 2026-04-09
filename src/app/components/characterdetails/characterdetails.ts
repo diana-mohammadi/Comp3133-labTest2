@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HarrypotterService } from '../../services/harrypotter';
-import { Character } from '../../models/character';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './characterdetails.css'
 })
 export class Characterdetails implements OnInit {
-  character?: Character;
+  character: any = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,16 +22,25 @@ export class Characterdetails implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // get id from route
     const id = this.route.snapshot.paramMap.get('id');
+    console.log('Route ID:', id);
 
     if (id) {
-      // api returns an array, so take the first item
       this.hpService.getCharacterById(id).subscribe({
         next: (data) => {
-          this.character = data[0];
+          console.log('API response:', data);
+
+          if (Array.isArray(data) && data.length > 0) {
+            this.character = data[0];
+          } else {
+            this.character = data;
+          }
+
+          console.log('Character used in page:', this.character);
         },
-        error: (err) => console.error('Error fetching character details:', err)
+        error: (err) => {
+          console.error('Error fetching character details:', err);
+        }
       });
     }
   }

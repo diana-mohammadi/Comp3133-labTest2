@@ -7,7 +7,6 @@ import { Character } from '../models/character';
   providedIn: 'root'
 })
 export class HarrypotterService {
-  // base url for harry potter api
   private baseUrl = 'https://hp-api.onrender.com/api';
 
   constructor(private http: HttpClient) {}
@@ -22,8 +21,8 @@ export class HarrypotterService {
     return this.http.get<Character[]>(`${this.baseUrl}/characters/house/${house.toLowerCase()}`);
   }
 
-  // get one character details by id
-  getCharacterById(id: string): Observable<Character[]> {
-  return this.http.get<Character[]>(`${this.baseUrl}/character/${id}`);
+  // get one character by id
+  getCharacterById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/character/${id}`);
   }
 }
